@@ -9,6 +9,11 @@ import AboutIndex from './components/AboutIndex';
 import NotFound from './components/NotFound';
 import Login from './components/Login';
 import Checkout from './components/Checkout';
+import CourseDetail from './components/CourseDetail';
+import CourseDetailByType from './components/CourseDetailByType';
+import PrivateRouter from './components/PrivateRouter';
+import Account from './components/Account';
+import Personal from './components/Personal';
 function App() {
   const navLinkStyle = ({ isActive }) => {
     return {
@@ -40,8 +45,14 @@ function App() {
           <Route path='rikkeiacademy' element={<RikkeiAcademy />} />
         </Route>
         <Route path='/courses' element={<Courses />} />
+        <Route path='/courses/:courseId' element={<CourseDetail />} />
+        <Route path='/courses/:courseId/:courseType' element={<CourseDetailByType />} />
         <Route path='/login' element={<Login />} />
         <Route path='/checkout' element={<Checkout />} />
+        <Route element={<PrivateRouter />}>
+          <Route path='/account' element={<Account />} />
+          <Route path='/personal' element={<Personal />} />
+        </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
