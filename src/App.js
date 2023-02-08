@@ -7,6 +7,8 @@ import RikkeiSoft from './components/RikkeiSoft';
 import RikkeiAcademy from './components/RikkeiAcademy';
 import AboutIndex from './components/AboutIndex';
 import NotFound from './components/NotFound';
+import Login from './components/Login';
+import Checkout from './components/Checkout';
 function App() {
   const navLinkStyle = ({ isActive }) => {
     return {
@@ -38,6 +40,8 @@ function App() {
           <Route path='rikkeiacademy' element={<RikkeiAcademy />} />
         </Route>
         <Route path='/courses' element={<Courses />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/checkout' element={<Checkout />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
